@@ -81,6 +81,7 @@ function startScanner() {
     Quagga.onDetected(function (result) {
         console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
         document.getElementById("myspan").textContent=result.codeResult.code;
+        document.getElementById("prodimage").src="https://assets.shop.loblaws.ca/products_jpeg/20022893001/en/20022893001_sml_1_@2x.jpg";
     });
 }
 
