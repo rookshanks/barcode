@@ -99,8 +99,8 @@ document.getElementById("btn").addEventListener("click", function () {
 
 function getUrl(source){
     source.collection('products').get().then((snapshot) => {
-        let idNum = snapshot.docs[0].data().dog;
-        // idNum = idNum.slice(0, idNum.indexOf("_"));
+        let idNum = snapshot.docs[0].data()["067800002467"];
+        idNum = idNum.slice(0, idNum.indexOf("_"));
         console.log(idNum);  
     })    
 }
