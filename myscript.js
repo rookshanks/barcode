@@ -82,7 +82,7 @@ function startScanner() {
         console.log("Barcode detected and processed : [" + result.codeResult.code + "]", result);
         document.getElementById("myspan").textContent=result.codeResult.code;
         // document.getElementById("prodimage").src="https://assets.shop.loblaws.ca/products_jpeg/20022893001/en/20022893001_sml_1_@2x.jpg";
-        getUrl(db);
+        console.log(getUrl(db));
     });
 }
 
@@ -98,9 +98,10 @@ document.getElementById("btn").addEventListener("click", function () {
 
 
 function getUrl(source){
-    source.collection('products').get().then((snapshot) => {
+    return source.collection('products').get().then((snapshot) => {
         let idNum = snapshot.docs[0].data()["067800002467"];
         idNum = idNum.slice(0, idNum.indexOf("_"));
-        console.log(idNum);  
-    })    
+        console.log(idNum);
+        return idNum;
+    })
 }
