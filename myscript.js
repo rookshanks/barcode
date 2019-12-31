@@ -101,7 +101,7 @@ function getUrl(source){
     return source.collection('products').get().then((snapshot) => {
         let idNum = snapshot.docs[0].data()["067800002467"];
         idNum = idNum.slice(0, idNum.indexOf("_"));
-        console.log(idNum);
+        // console.log(idNum);
         return idNum;
     })
 }
